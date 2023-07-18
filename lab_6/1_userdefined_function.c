@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 
-void add(int num1, int num2, int *result)
+void add(int num1, int num2, int *result) // yaha pointer kina use gareko vaney,
+                                //yesle main function ma pani euta copy banauxa
 {
     *result = num1 + num2;
 }
@@ -30,12 +31,13 @@ int main()
     scanf("%d %d", &num_1, &num_2);
     printf("Enter 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division:");
     scanf("%d", &operator);
+    // switch case use garda ni hunxa tara i like if() elseif()
     if (operator== 1)
     {
         add(num_1, num_2, &result); // function call
         printf("Addition:%d\n", result);
     }
-    else if (operator== 2)
+    else if (operator== 2) // mero agi k mistake ho vaney i used elif, tyo python ko ho
     {
         subtraction(num_1, num_2, &result); // function call
         printf("Subtraction:%d\n", result);
